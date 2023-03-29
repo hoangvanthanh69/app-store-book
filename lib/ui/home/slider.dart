@@ -12,10 +12,9 @@ class SliderBanner extends StatefulWidget {
 class _SliderBannerState extends State<SliderBanner> {
   int activeIndex = 0;
   final images = [
-    'assets/images/banner/banner1.png',
-    'assets/images/banner/banner2.png',
-    'assets/images/banner/banner3.png',
-    'assets/images/banner/banner4.png'
+    'assets/images/banner/banner1.jpg',
+    'assets/images/banner/banner2.jpg',
+    'assets/images/banner/banner3.jpg'
   ];
 
   @override

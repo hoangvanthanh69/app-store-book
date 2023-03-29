@@ -39,7 +39,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
   var _isLoading = false;
 
   bool _isValidImageUrl(String value) {
-    return value.startsWith('assets/images/trasua') 
+    return value.startsWith('assets/images/sach') 
       && (value.endsWith('.png') 
         || value.endsWith('.jpg')
         || value.endsWith('jpeg'));

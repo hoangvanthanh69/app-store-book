@@ -22,8 +22,8 @@ class _AuthCardState extends State<AuthCard> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   AuthMode _authMode = AuthMode.login;
   final Map<String, String> _authData = {
-    'email': '',
-    'password': '',
+    'Email': '',
+    'Mật khẩu': '',
   };
   final _isSubmitting = ValueNotifier<bool>(false);
   final _passwordController = TextEditingController();
@@ -53,7 +53,7 @@ class _AuthCardState extends State<AuthCard> {
         context,
         (error is HttpException)
             ? error.toString()
-            : 'Authentication failed');
+            : 'Thất bại');
     }
 
     _isSubmitting.value = false;
@@ -102,8 +102,8 @@ class _AuthCardState extends State<AuthCard> {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
                     child: Text(
-                      'Forgot password?',
-                      style: TextStyle(fontSize: 18, color: Color(0xFFCB067C)),
+                      'Quên mật khẩu',
+                      style: TextStyle(fontSize: 18, color: Color.fromARGB(255, 6, 49, 203)),
                     ),
                   ),
                 ),
@@ -139,19 +139,19 @@ class _AuthCardState extends State<AuthCard> {
           fontSize: 18,
         ),
       ),
-      child: Text(_authMode == AuthMode.login ? 'LOGIN' : 'SIGN UP'),
+      child: Text(_authMode == AuthMode.login ? 'Đăng Nhập' : 'Đăng Ký'),
     );
   }
 
   Widget _buildPasswordConfirmField() {
     return TextFormField(
       enabled: _authMode == AuthMode.signup,
-      decoration: const InputDecoration(labelText: 'Confirm Password'),
+      decoration: const InputDecoration(labelText: 'Nhập lại mật khẩu'),
       obscureText: true,
       validator: _authMode == AuthMode.signup
           ? (value) {
               if (value != _passwordController.text) {
-                return 'Passwords do not match!';
+                return 'Mật khẩu không đúng!';
               }
               return null;
             }
@@ -166,7 +166,7 @@ class _AuthCardState extends State<AuthCard> {
       controller: _passwordController,
       validator: (value) {
         if (value == null || value.length < 5) {
-          return 'Password is too short!';
+          return 'Phải hơn 5 kí tự';
         }
         return null;
       },
@@ -198,7 +198,7 @@ class _AuthCardState extends State<AuthCard> {
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
         if (value!.isEmpty || !value.contains('@')) {
-          return 'Invalid email!';
+          return 'Email không hợp lệ';
         }
         return null;
       },
