@@ -10,7 +10,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 48,
+        toolbarHeight: 40,
         title: const Text('Thông tin',
           style: TextStyle(
             fontWeight: FontWeight.w600,
@@ -18,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         titleSpacing: 10,
-        backgroundColor: const Color(0xFF0C9869),
+        backgroundColor: Color.fromARGB(255, 54, 72, 66),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -47,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                         )
                       ),
                       SizedBox(width: 10),
-                      Text("Hi! Friend",
+                      Text("Chào bạn",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 30,
@@ -56,64 +56,8 @@ class ProfileScreen extends StatelessWidget {
                       )
                     ]
                   ),
-                  const SizedBox(height: 20),
-                  const Text('COMING SOON...')
                 ],
               ),
-            ),
-            
-            Row( 
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 90,
-                  width: MediaQuery.of(context).size.width *0.46,
-                  decoration: BoxDecoration(
-                    color: const Color(0xBDFF5722),
-                    borderRadius: BorderRadius.circular(15)
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Icon(Icons.security, color: Colors.white,),
-                        SizedBox(height: 20),
-                        Text('Điều khoản sử dụng',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600
-                          ),
-                        )
-                    ])
-                  ),
-                ),
-                Container(
-                  height: 90,
-                  width: MediaQuery.of(context).size.width *0.46,
-                  decoration: BoxDecoration(
-                    color: const Color(0xBD2195F3),
-                    borderRadius: BorderRadius.circular(15)
-                  ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Icon(Icons.question_answer_outlined,  color: Colors.white,),
-                        SizedBox(height: 20),
-                        Text('Liên hệ và góp ý',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600
-                          ),
-                        )
-                    ])
-                  ),
-                ), 
-              ]
             ),
 
             const SizedBox(height: 30),
@@ -155,22 +99,6 @@ class ProfileScreen extends StatelessWidget {
                 ])
               ),
             ),
-
-            Card(
-              elevation: 4,
-              child: TextButton(
-                onPressed: () {},
-                child: Row(children: const [
-                  Icon(Icons.subdirectory_arrow_right, color: Colors.black),
-                  SizedBox(width: 5),
-                  Text('Địa chỉ đã lưu', style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black
-                  ))
-                ])
-              ),
-            ),
-
             Card(
               elevation: 4,
               child: TextButton(

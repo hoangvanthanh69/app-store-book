@@ -188,7 +188,7 @@ class _AuthCardState extends State<AuthCard> {
           fontWeight: FontWeight.w700,
         ),
       ),
-      child:Text('${_authMode == AuthMode.login ? 'sign up' : 'Login'} an account.'),
+      child:Text('${_authMode == AuthMode.login ? 'Đăng ký' : 'Đăng nhập'} tài khoản'),
     );
   }
 

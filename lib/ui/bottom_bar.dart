@@ -51,19 +51,19 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
           tabs: const [
             GButton(
               icon: Icons.home_outlined,
-              text: "Home",
+              text: "Trang chủ",
             ),
             GButton(
               icon: Icons.coffee_outlined,
-              text: "Product",
+              text: "Sản phẩm",
             ),
             GButton(
               icon: Icons.local_atm_outlined,
-              text: "Order",
+              text: "Đơn hàng",
             ),
             GButton(
               icon: Icons.assignment_ind_outlined,
-              text: "Profile"
+              text: "Thông tin"
             ),
           ],
         ),

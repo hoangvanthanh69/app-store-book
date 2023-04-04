@@ -105,7 +105,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
         toolbarHeight: 48,
         titleSpacing: 10,
         backgroundColor: Colors.blue,
-        title: Text((_editedProduct.id != null) ? 'Thêm sản phẩm': 'Chỉnh sửa sản phẩm',
+        title: Text((_editedProduct.id != null) ? 'Chỉnh sửa sản phẩm': 'Thêm sản phẩm',
           style: const TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 20,
@@ -142,12 +142,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
   TextFormField buildTitleField() {
     return TextFormField(
       initialValue: _editedProduct.title,
-      decoration: const InputDecoration(labelText: 'Title'),
+      decoration: const InputDecoration(labelText: 'Tiêu đề'),
       textInputAction: TextInputAction.next,
       autofocus: true,
       validator: (value) {
         if(value!.isEmpty) {
-          return 'Please enter a title.';
+          return 'Vui lòng nhập tiêu đề';
         }
         return null;
       },
@@ -160,18 +160,18 @@ class _EditProductScreenState extends State<EditProductScreen> {
   TextFormField buildPriceField() {
     return TextFormField(
       initialValue: _editedProduct.price.toString(),
-      decoration: const InputDecoration(labelText: 'Price'),
+      decoration: const InputDecoration(labelText: 'Giá'),
       textInputAction: TextInputAction.next,
       keyboardType: TextInputType.number,
       validator: (value) {
         if(value!.isEmpty) {
-          return 'Please enter a price.' ;
+          return 'Vui lòng nhập giá' ;
         }
         if(double.tryParse(value) == null) {
-          return 'Please enter valid number.';
+          return 'Hãy nhập số';
         }
         if(double.parse(value) <= 0) {
-          return 'Please enter a number greater than zero.';
+          return 'Nhập giá lớn hơn 0';
         }
         return null;
       },
@@ -184,15 +184,15 @@ class _EditProductScreenState extends State<EditProductScreen> {
   TextFormField buildDescriptionField() {
     return TextFormField(
       initialValue: _editedProduct.description,
-      decoration: const InputDecoration(labelText: 'Description'),
+      decoration: const InputDecoration(labelText: 'Mô tả'),
       maxLines: 3,
       keyboardType: TextInputType.multiline,
       validator: (value) {
         if(value!.isEmpty) {
-          return 'Please enter a description.';
+          return 'Vui lòng nhập ';
         }
         if(value.length < 10) {
-          return 'Should be at least 10 characters long';
+          return 'Nhập ít nhất 10 kí tự';
         }
         return null;
       },
@@ -220,7 +220,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
             ),
           ),
           child: _imageController.text.isEmpty
-            ? const Text('Enter a image')
+            ? const Text('Nhập link ảnh')
             : FittedBox(
               child: Image.asset(
                 _imageController.text,
@@ -237,7 +237,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   TextFormField buildImageURLField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: 'Image'),
+      decoration: const InputDecoration(labelText: 'Hình ảnh'),
       keyboardType: TextInputType.url,
       textInputAction: TextInputAction.done,
       controller: _imageController,
@@ -245,10 +245,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
       onFieldSubmitted: (value) => _saveForm(),
       validator: (value) {
         if (value!.isEmpty) {
-          return 'Please enter an image URL.';
+          return 'Vui lòng nhập URL';
         }
         if (!_isValidImageUrl(value)) {
-          return 'Please enter a valid image URL.';
+          return 'Vui lòng nhập URL hợp lệ';
         }
         return null;
       },

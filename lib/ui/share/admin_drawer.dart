@@ -12,14 +12,14 @@ class AdminDrawer extends StatelessWidget {
         children: <Widget>[
           AppBar(
             toolbarHeight: 48,
-            title: const Text('Administration'),
+            title: const Text('Quản lý'),
             automaticallyImplyLeading: false,
             backgroundColor: Colors.blue,
           ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.coffee_outlined),
-            title: const Text('Product'),
+            title: const Text('Sản phẩm'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(
                 ProductAdministration.routeName
@@ -29,7 +29,7 @@ class AdminDrawer extends StatelessWidget {
           const Divider(),
           ListTile(
             leading: const Icon(Icons.local_atm_outlined),
-            title: const Text('Orders'),
+            title: const Text('Đơn hàng'),
             onTap:() {
               Navigator.of(context)
                 .pushReplacementNamed(
@@ -40,7 +40,7 @@ class AdminDrawer extends StatelessWidget {
           const Divider(),
           ListTile(
             leading: const Icon(Icons.exit_to_app),
-            title: const Text('Logout'),
+            title: const Text('Đăng xuất'),
             onTap: () {
               Navigator.of(context)
                 .pushReplacementNamed('/');
